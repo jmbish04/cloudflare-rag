@@ -1,0 +1,44 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Cloudflare RAG API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/topics": {
+      "get": {
+        "summary": "List all main topics",
+        "responses": {"200": {"description": "List of topics"}}
+      }
+    },
+    "/sessions": {
+      "post": {
+        "summary": "Store chat session information",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {"$ref": "#/components/schemas/ChatSession"}
+            }
+          }
+        },
+        "responses": {"201": {"description": "Stored"}}
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ChatSession": {
+        "type": "object",
+        "properties": {
+          "sessionId": {"type": "string"},
+          "mainTopic": {"type": "string"},
+          "userPrompt": {"type": "string"},
+          "vectorResultsJson": {"type": "string"},
+          "r2OutputUrl": {"type": "string"}
+        },
+        "required": ["sessionId"]
+      }
+    }
+  }
+}
