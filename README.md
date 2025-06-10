@@ -16,6 +16,7 @@ Features:
 - Per-IP Rate limiting using Cloudflare's [KV](https://developers.cloudflare.com/kv/)
 - OCR is running inside Cloudflare Worker using [unpdf](https://github.com/unjs/unpdf)
 - Smart Placement automatically places your workloads in an optimal location that minimizes latency and speeds up your applications
+- REST endpoints for listing topics and logging sessions with an OpenAPI 3.1 specification
 
 
 ## Development
